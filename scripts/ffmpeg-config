@@ -14,7 +14,7 @@ if test -f "$BUILD"/ffmpeg_options ; then
 fi
 
 OPTIONS="--enable-gpl --enable_nonfree --disable-debug --disable-doc --enable-static --disable-shared 
---enable-libfdk-aac --enable-libvvdec --enable-libdav1d --extra-version=VVCEasy"
+--enable-libjxl --enable-libfdk-aac --enable-libvvdec --enable-libdav1d --extra-version=VVCEasy"
 if "$BUILD"/scripts/test-libmpv ; then
     OPTIONS="$OPTIONS --enable-pic"
 fi
