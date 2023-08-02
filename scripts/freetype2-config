@@ -16,5 +16,5 @@ if "$BUILD"/scripts/test-libmpv ; then
 fi
 
 cd "$BUILD"/freetype2
-./bootstrap
-./configure --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"
+./autogen.sh --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"
+./configure  --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"
