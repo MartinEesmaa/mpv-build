@@ -10,7 +10,7 @@ if test -f "$BUILD"/harfbuzz_options ; then
     unset -v IFS
 fi
 
-OPTIONS="--enable-static --disable-shared --without-glib"
+OPTIONS="--enable-static --disable-shared --without-glib --disable-docs"
 if "$BUILD"/scripts/test-libmpv ; then
     OPTIONS="$OPTIONS --with-pic"
 fi
