@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-make -C vvdec install-release install-prefix="$BUILD/build_libs" "$@"
+make -C vvdec install "$@"

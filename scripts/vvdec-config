@@ -9,3 +9,8 @@ if test -f "$BUILD"/vvdec_options ; then
     set -- $(cat "$BUILD"/vvdec_options) "$@"
     unset -v IFS
 fi
+
+OPTIONS="-DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_EXE_LINKER_FLAGS="-static""
+
+cd "$BUILD"/vvdec
+cmake -DCMAKE_INSTALL_PREFIX="$BUILD/build_libs" $OPTIONS . "$@"
