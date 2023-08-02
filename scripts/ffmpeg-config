@@ -35,4 +35,4 @@ cd "$BUILD"/ffmpeg_build
 # need to link against stdc++ in case libplacebo was built with glslang,
 # which requires that
 export LDFLAGS="$LDFLAGS -lstdc++"
-"$BUILD"/ffmpeg/configure --prefix="$BUILD"/build_libs --extra-ldexeflags="-static" --pkg-config-flags="-static" $OPTIONS "$@"
+"$BUILD"/ffmpeg/configure --prefix="$BUILD"/build_libs --extra-ldexeflags="--static" --pkg-config-flags=--static $OPTIONS "$@"
