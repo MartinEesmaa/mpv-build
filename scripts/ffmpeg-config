@@ -13,7 +13,7 @@ if test -f "$BUILD"/ffmpeg_options ; then
     unset -v IFS
 fi
 
-OPTIONS="--enable-gpl --enable_nonfree --disable-debug --disable-doc --enable-static --disable-shared 
+OPTIONS="--enable-gpl --enable-nonfree --disable-debug --disable-doc --enable-static --disable-shared 
 --enable-libjxl --enable-libfdk-aac --enable-libvvdec --enable-libdav1d --extra-version=VVCEasy"
 if "$BUILD"/scripts/test-libmpv ; then
     OPTIONS="$OPTIONS --enable-pic"
