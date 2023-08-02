@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+
+make -C lua CFLAGS="-fPIC -Dgetlocaledecpoint\(\)=\(\'.\'\)" PLAT=linux LUA_T= LUAC_T= LDFLAGS="-static" "$@"
+make -C lua INSTALL=${INSTALL:-install} INSTALL_TOP="$BUILD/build_libs" TO_BIN=/dev/null install "$@"

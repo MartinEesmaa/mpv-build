@@ -13,7 +13,8 @@ if test -f "$BUILD"/ffmpeg_options ; then
     unset -v IFS
 fi
 
-OPTIONS="--enable-gpl --disable-debug --disable-doc --enable-static --disable-shared"
+OPTIONS="--enable-gpl --enable_nonfree --disable-debug --disable-doc --enable-static --disable-shared 
+--enable-libfdk-aac --enable-libvvdec --enable-libdav1d --extra-version=VVCEasy"
 if "$BUILD"/scripts/test-libmpv ; then
     OPTIONS="$OPTIONS --enable-pic"
 fi
@@ -49,4 +50,4 @@ cd "$BUILD"/ffmpeg_build
 # need to link against stdc++ in case libplacebo was built with glslang,
 # which requires that
 export LDFLAGS="$LDFLAGS -lstdc++"
-"$BUILD"/ffmpeg/configure --prefix="$BUILD"/build_libs $OPTIONS "$@"
+"$BUILD"/ffmpeg/configure --prefix="$BUILD"/build_libs --extra-ldexeflags="-static" --pkg-config-flags="-static" $OPTIONS "$@"

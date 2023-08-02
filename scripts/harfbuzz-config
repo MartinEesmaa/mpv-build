@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+BUILD="$(pwd)"
+newline="
+"
+
+if test -f "$BUILD"/harfbuzz_options ; then
+    IFS=$newline
+    set -- $(cat "$BUILD"/harfbuzz_options) "$@"
+    unset -v IFS
+fi
+
+OPTIONS="--enable-static --disable-shared --without-glib"
+if "$BUILD"/scripts/test-libmpv ; then
+    OPTIONS="$OPTIONS --with-pic"
+fi
+
+cd "$BUILD"/harfbuzz
+./autogen.sh --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"
+./configure  --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"

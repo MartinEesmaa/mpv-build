@@ -3,7 +3,14 @@ export LC_ALL=C
 
 scripts/ffmpeg-clean
 scripts/fribidi-clean
+scripts/freetype2-clean
+scripts/harfbuzz-clean
 scripts/libass-clean
+scripts/dav1d-clean
+scripts/vvdec-clean
+scripts/fdkaac-clean
+scripts/libjxl-clean
+scripts/lua-clean
 scripts/libplacebo-clean
 scripts/mpv-clean
 rm -rf build_libs

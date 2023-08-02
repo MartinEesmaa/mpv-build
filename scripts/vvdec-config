@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+BUILD="$(pwd)"
+newline="
+"
+
+if test -f "$BUILD"/vvdec_options ; then
+    IFS=$newline
+    set -- $(cat "$BUILD"/vvdec_options) "$@"
+    unset -v IFS
+fi

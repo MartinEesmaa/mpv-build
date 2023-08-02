@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ -f freetype2/Makefile ];then
+    make -C freetype2 distclean
+fi

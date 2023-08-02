@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+BUILD="$(pwd)"
+newline="
+"
+
+if test -f "$BUILD"/libjxl_options ; then
+    IFS=$newline
+    set -- $(cat "$BUILD"/libjxl_options) "$@"
+    unset -v IFS
+fi
+
+OPTIONS="-DCMAKE_BUILD_TYPE=Release -D{UNITTEST,INSTALL_EXAMPLES}=off 
+-DBUILD_SHARED_LIBS=OFF -DCMAKE_EXE_LINKER_FLAGS="-static""
+
+cd "$BUILD"/libjxl
+cmake -DCMAKE_INSTALL_PREFIX="$BUILD/build_libs" $OPTIONS . -GNinja "$@"

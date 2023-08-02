@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+BUILD="$(pwd)"
+newline="
+"
+
+if test -f "$BUILD"/fdkaac_options ; then
+    IFS=$newline
+    set -- $(cat "$BUILD"/fdkaac_options) "$@"
+    unset -v IFS
+fi
+
+OPTIONS="--enable-static --disable-shared"
+if "$BUILD"/scripts/test-libmpv ; then
+    OPTIONS="$OPTIONS --with-pic"
+fi
+
+cd "$BUILD"/fdkaac
+# Later libass doesn't automatically run configure with autogen.sh anymore
+./autogen.sh --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"
+./configure  --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"
