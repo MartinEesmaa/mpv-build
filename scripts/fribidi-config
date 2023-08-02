@@ -16,5 +16,8 @@ if "$BUILD"/scripts/test-libmpv ; then
 fi
 
 cd "$BUILD"/fribidi
-./bootstrap
-./configure --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"
+
+test -d build && OPTIONS="$OPTIONS --wipe"
+echo Using fribidi options: $OPTIONS "$@"
+
+meson setup build --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"

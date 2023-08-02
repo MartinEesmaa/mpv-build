@@ -1,5 +1,7 @@
 #!/bin/sh
 
-if [ -f fribidi/Makefile ];then
-    make -C fribidi distclean
+set -e
+
+if [ -d "fribidi/build" ]; then
+    rm -r fribidi/build
 fi
