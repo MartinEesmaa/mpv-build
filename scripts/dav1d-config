@@ -11,7 +11,7 @@ if test -f "$BUILD"/dav1d_options ; then
     unset -v IFS
 fi
 
-OPTIONS="-Ddefault_library=static -Dtests=false -Ddemos=false"
+OPTIONS="-Ddefault_library=static -Denable_tools=disable -Denable_examples=false -Denable_tests=false -Denable_docs=false"
 
 case "$PKG_CONFIG_PATH" in
   '')
