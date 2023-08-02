@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-make -C libjxl install "$@"
+ninja -C libjxl install "$@"
