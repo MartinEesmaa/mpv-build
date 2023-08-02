@@ -12,7 +12,7 @@ if test -f "$BUILD"/mpv_options ; then
 fi
 
 if "$BUILD"/scripts/test-libmpv; then
-    OPTIONS="-Dc_link_args='-Wl,-Bsymbolic'"
+    OPTIONS="-Dc_link_args='-Wl,-Bsymbolic' -Dlua=enabled -Dx11=enabled"
 fi
 
 case "$PKG_CONFIG_PATH" in

@@ -3,5 +3,6 @@ set -e
 export LC_ALL=C
 
 ./update
+./wget
 ./clean
 ./build "$@"

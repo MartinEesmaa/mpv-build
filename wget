@@ -1,0 +1,8 @@
+#!/bin/sh
+export LC_ALL=C
+
+if [ ! -d lua ]; then
+	mkdir lua
+	wget http://www.lua.org/ftp/lua-5.2.4.tar.gz -O - | \
+		tar -xz -C lua --strip-components=1
+fi

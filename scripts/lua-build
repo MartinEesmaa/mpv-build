@@ -1,11 +1,10 @@
 #!/bin/sh
 set -e
 
-make -C lua MYCFLAGS="-fPIC -Dgetlocaledecpoint\(\)=\(\'.\'\)" PLAT=linux LUA_T= LUAC_T= LDFLAGS="-static" "$@"
-cp lua/*.h ~/mpv-build/build_libs/include/
-cp lua/*.a ~/mpv-build/build_libs/lib/
+make -C lua MYCFLAGS="-fPIC -Dgetlocaledecpoint\(\)=\(\'.\'\)" PLAT=linux LUA_T= LUAC_T= "$@"
+make -C lua INSTALL=${INSTALL:-install} INSTALL_TOP=$BUILD/build_libs TO_BIN=/dev/null install
 
-cat >>~/mpv-build/build_libs/lib/pkgconfig/lua.pc <<'EOF'
+cat >>$BUILD/build_libs/lib/pkgconfig/lua.pc <<'EOF'
 Name: Lua
 Description:
 Version: ${version}
