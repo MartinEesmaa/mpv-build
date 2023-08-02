@@ -2,8 +2,8 @@
 set -e
 
 make -C lua MYCFLAGS="-fPIC -Dgetlocaledecpoint\(\)=\(\'.\'\)" PLAT=linux LUA_T= LUAC_T= LDFLAGS="-static" "$@"
-cp lua/*.h "~/mpv-build/build_libs/include/"
-cp lua/*.a "~/mpv-build/build_libs/lib/"
+cp lua/*.h ~/mpv-build/build_libs/include/
+cp lua/*.a ~/mpv-build/build_libs/lib/
 
 cat >>~/mpv-build/build_libs/lib/pkgconfig/lua.pc <<'EOF'
 Name: Lua
