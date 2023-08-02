@@ -15,4 +15,5 @@ OPTIONS="-DJPEGXL_ENABLE_JPEGLI_LIBJPEG=OFF -DJPEGXL_ENABLE_EXAMPLES=OFF -DJPEGX
 -DJPEGXL_ENABLE_MANPAGES=OFF -DJPEGXL_TEST_TOOLS=OFF"
 
 cd "$BUILD"/libjxl
+sed -i 's/-lm/-lm -lstdc++/g' lib/jxl/libjxl.pc.in lib/threads/libjxl_threads.pc.in
 cmake -DCMAKE_INSTALL_PREFIX="$BUILD/build_libs" $OPTIONS . -GNinja "$@"
