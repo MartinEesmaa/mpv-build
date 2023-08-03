@@ -7,7 +7,7 @@ cp lua/src/*.h ~/mpv-build/build_libs/include/
 cp lua/src/*.hpp ~/mpv-build/build_libs/include/
 cp lua/src/*.a ~/mpv-build/build_libs/lib/
 
-cat >>$BUILD/build_libs/lib/pkgconfig/lua.pc <<'EOF'
+cat >>~/mpv-build/build_libs/lib/pkgconfig/lua.pc <<'EOF'
 Name: Lua
 Description:
 Version: ${version}
