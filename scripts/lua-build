@@ -2,6 +2,7 @@
 set -e
 
 make -C lua MYCFLAGS="-fPIC -Dgetlocaledecpoint\(\)=\(\'.\'\)" PLAT=linux LUA_T= LUAC_T= "$@"
+ranlib liblua.a
 cp lua/src/*.h ~/mpv-build/build_libs/include/
 cp lua/src/*.hpp ~/mpv-build/build_libs/include/
 cp lua/src/*.a ~/mpv-build/build_libs/lib/
