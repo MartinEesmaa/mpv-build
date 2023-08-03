@@ -18,8 +18,8 @@ scripts/vvdec-config
 scripts/vvdec-build "$@"
 scripts/fdkaac-config
 scripts/fdkaac-build "$@"
-scripts/libjxl-config
-scripts/libjxl-build "$@"
+#scripts/libjxl-config
+#scripts/libjxl-build "$@"
 scripts/ffmpeg-config
 scripts/ffmpeg-build "$@"
 scripts/lua-config

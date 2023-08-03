@@ -21,7 +21,7 @@ do_clone_all()
     do_clone "harfbuzz"   "https://github.com/harfbuzz/harfbuzz"
     do_clone "dav1d"      "https://code.videolan.org/videolan/dav1d/"
     do_clone "vvdec"      "https://github.com/fraunhoferhhi/vvdec"
-    do_clone "libjxl"     "https://github.com/libjxl/libjxl"
+    #do_clone "libjxl"     "https://github.com/libjxl/libjxl"
     do_clone "freetype2"  "https://gitlab.freedesktop.org/freetype/freetype"
     do_clone "fribidi"    "https://github.com/fribidi/fribidi"
     do_clone "fdkaac"     "https://github.com/mstorsjo/fdk-aac"
