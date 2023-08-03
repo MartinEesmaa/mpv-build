@@ -11,6 +11,7 @@ scripts/vvdec-clean
 scripts/fdkaac-clean
 #scripts/libjxl-clean
 scripts/lua-clean
+scripts/libxml2-clean
 scripts/libplacebo-clean
 scripts/mpv-clean
 rm -rf build_libs

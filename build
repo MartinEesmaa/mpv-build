@@ -2,6 +2,8 @@
 set -e
 export LC_ALL=C
 
+scripts/libxml2-config
+scripts/libxml2-build "$@"
 scripts/fribidi-config
 scripts/fribidi-build "$@"
 scripts/freetype2-config

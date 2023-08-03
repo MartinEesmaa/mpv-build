@@ -23,6 +23,7 @@ do_clone_all()
     do_clone "vvdec"      "https://github.com/fraunhoferhhi/vvdec"
     #do_clone "libjxl"     "https://github.com/libjxl/libjxl"
     do_clone "freetype2"  "https://gitlab.freedesktop.org/freetype/freetype"
+    do_clone "libxml2"    "https://github.com/GNOME/libxml2"
     do_clone "fribidi"    "https://github.com/fribidi/fribidi"
     do_clone "fdkaac"     "https://github.com/mstorsjo/fdk-aac"
     do_clone "libass"     "https://github.com/libass/libass.git"
