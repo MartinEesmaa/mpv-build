@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 export LC_ALL=C
+export CFLAGS="$CFLAGS -fno-tree-vectorize"
+export CXXFLAGS="$CXXFLAGS -fno-tree-vectorize"
 
 scripts/libxml2-config
 scripts/libxml2-build "$@"
