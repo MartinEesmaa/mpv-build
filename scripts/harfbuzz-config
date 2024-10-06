@@ -10,11 +10,20 @@ if test -f "$BUILD"/harfbuzz_options ; then
     unset -v IFS
 fi
 
-OPTIONS="--enable-static --disable-shared --without-glib --disable-docs"
-if "$BUILD"/scripts/test-libmpv ; then
-    OPTIONS="$OPTIONS --with-pic"
-fi
+OPTIONS="-Ddefault_library=static -Dtests=disabled -Ddocs=disabled"
+
+case "$PKG_CONFIG_PATH" in
+  '')
+    export PKG_CONFIG_PATH="$BUILD/build_libs/lib/pkgconfig"
+    ;;
+  *)
+    export PKG_CONFIG_PATH="$BUILD/build_libs/lib/pkgconfig:$PKG_CONFIG_PATH"
+    ;;
+esac
 
 cd "$BUILD"/harfbuzz
-./autogen.sh --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"
-./configure  --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"
+
+test -d build && OPTIONS="$OPTIONS --wipe"
+echo Using harfbuzz options: $OPTIONS "$@"
+
+meson setup build --prefix="$BUILD/build_libs" --libdir="$BUILD/build_libs/lib" $OPTIONS "$@"

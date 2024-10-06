@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-make -C harfbuzz install "$@"
+ninja install -C harfbuzz/build "$@"
