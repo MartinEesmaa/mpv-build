@@ -24,6 +24,8 @@ scripts/fdkaac-config
 scripts/fdkaac-build "$@"
 #scripts/libjxl-config
 #scripts/libjxl-build "$@"
+scripts/vkheader-config
+scripts/vkheader-build "$@"
 scripts/ffmpeg-config
 scripts/ffmpeg-build "$@"
 scripts/lua-config

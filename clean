@@ -8,6 +8,7 @@ scripts/harfbuzz-clean
 scripts/libass-clean
 scripts/dav1d-clean
 scripts/vvdec-clean
+scripts/vkheader-clean
 scripts/fdkaac-clean
 #scripts/libjxl-clean
 scripts/lua-clean
