@@ -10,7 +10,7 @@ if test -f "$BUILD"/fribidi_options ; then
     unset -v IFS
 fi
 
-OPTIONS="--enable-static --disable-shared --without-glib --with-pic"
+OPTIONS="-Ddefault_library=static -Dtests=false -Dbin=false -Ddocs=false"
 
 cd "$BUILD"/fribidi
 
