@@ -14,10 +14,7 @@ if test -f "$BUILD"/ffmpeg_options ; then
 fi
 
 OPTIONS="--enable-gpl --enable-nonfree --disable-debug --enable-openssl --disable-doc --enable-static --disable-shared 
---enable-libfdk-aac --enable-libxml2 --enable-libvvdec --enable-libdav1d --extra-version=VVCEasy --pkg-config-flags="--static""
-if "$BUILD"/scripts/test-libmpv ; then
-    OPTIONS="$OPTIONS --enable-pic"
-fi
+--enable-libfdk-aac --enable-libxml2 --enable-libvvdec --enable-libdav1d --extra-version=VVCEasy --pkg-config-flags="--static" --enable-pic"
 
 case "$PKG_CONFIG_PATH" in
   '')
