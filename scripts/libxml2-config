@@ -10,10 +10,7 @@ if test -f "$BUILD"/libxml2_options ; then
     unset -v IFS
 fi
 
-OPTIONS="--enable-static --disable-shared --with-minimum --with-threads --with-tree --without-lzma --enable-pic"
-if "$BUILD"/scripts/test-libmpv ; then
-    OPTIONS="$OPTIONS --with-pic"
-fi
+OPTIONS="--enable-static --disable-shared --with-minimum --with-threads --with-tree --without-lzma --with-pic"
 
 case "$PKG_CONFIG_PATH" in
   '')

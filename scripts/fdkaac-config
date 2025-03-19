@@ -10,10 +10,7 @@ if test -f "$BUILD"/fdkaac_options ; then
     unset -v IFS
 fi
 
-OPTIONS="--enable-static --disable-shared --enable-pic"
-if "$BUILD"/scripts/test-libmpv ; then
-    OPTIONS="$OPTIONS --with-pic"
-fi
+OPTIONS="--enable-static --disable-shared --with-pic"
 
 cd "$BUILD"/fdkaac
 # Later libass doesn't automatically run configure with autogen.sh anymore
