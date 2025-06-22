@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-make -C Vulkan-Headers install "$@"
+cmake --build Vulkan-Headers/build --target install "$@"
